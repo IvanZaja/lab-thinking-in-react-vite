@@ -1,7 +1,7 @@
 import ProductRow from "../product-row/ProductRow";
 
 
-function ProductsTable({products}) {
+function ProductsTable({filteredProducts}) {
   return (
     <div>
         <table className="table table-striped-columns table-hover">
@@ -12,12 +12,9 @@ function ProductsTable({products}) {
                 </tr>
             </thead>
             <tbody>
-                
-                {products.map((product) => {
-                    return (
-                        <ProductRow key={product.id} product={product}/>
-                    )
-                })}
+                {filteredProducts.map(product => (
+                    <ProductRow key={product.id} product={product}/>
+                ))}
             </tbody>
         </table>
     </div>
